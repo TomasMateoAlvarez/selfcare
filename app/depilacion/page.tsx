@@ -1,5 +1,4 @@
 import Menu from "../components/Menu";
-import { EnvelopeIcon, CameraIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
