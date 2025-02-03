@@ -61,21 +61,21 @@ export default function Home() {
               <Image src='/depilacion.jpeg' alt='Depilación' width={300} height={200} className='rounded-md mb-4' />
               <h3 className='text-xl font-semibold mb-2'>Depilación</h3>
               <p className='text-gray-600 mb-4'>Breve información acerca de depilación.</p>
-              <a href='http://localhost:3000/depilacion' className='text-blue-500 hover:underline'>Ver más</a>
+              <a href='/depilacion' className='text-blue-500 hover:underline'>Ver más</a>
             </div>
 
             <div className='bg-white p-6 rounded-lg shadow-md'>
               <Image src='/perfil.jpeg' alt='Limpieza facial' width={300} height={200} className='rounded-md mb-4' />
               <h3 className='text-xl font-semibold mb-2'>Limpieza facial</h3>
               <p className='text-gray-600 mb-4'>Breve información acerca de limpieza facial.</p>
-              <a href='http://localhost:3000/limpieza' className='text-blue-500 hover:underline'>Ver más</a>
+              <a href='/limpieza' className='text-blue-500 hover:underline'>Ver más</a>
             </div>
 
             <div className='bg-white p-6 rounded-lg shadow-md'>
               <Image src='/asesoria.jpeg' alt='Asesoría dermatológica' width={300} height={200} className='rounded-md mb-4' />
               <h3 className='text-xl font-semibold mb-2'>Asesoría dermatológica</h3>
               <p className='text-gray-600 mb-4'>Breve información acerca de asesoría dermatológica.</p>
-              <a href='#' className='text-blue-500 hover:underline'>Ver más</a>
+              <a href='/derma' className='text-blue-500 hover:underline'>Ver más</a>
             </div>
           </div>
         </div>
