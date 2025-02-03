@@ -3,6 +3,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Menu as MenuIcon, X as CloseIcon } from 'lucide-react'; // Íconos del menú
 const Menu = () => {
+  const handleClick = () => {
+    // Define what should happen when a link is clicked
+  };
   const [isOpen, setIsOpen] = useState(false); // Estado para abrir/cerrar el menú
 
   return (
@@ -26,12 +29,11 @@ const Menu = () => {
         </button>
 
         {/* Menú (pantallas grandes) */}
-        <div className="hidden md:flex space-x-8 text-black font-bold">
-          <NavLink href="/#about" text="Sobre mí" />
-          <NavLink href="/#services" text="Servicios" />
-          <NavLink href="/#contact" text="Contacto" />
-          <NavLink href="/derma#schedule" text="Agenda" />
-        </div>
+        <NavLink href="/#about" text="Sobre mí" onClick={handleClick} />
+  <NavLink href="/#services" text="Servicios" onClick={handleClick} />
+  <NavLink href="/#contact" text="Contacto" onClick={handleClick} />
+  <NavLink href="/derma#schedule" text="Agenda" onClick={handleClick} />
+
       </div>
 
       {/* Menú desplegable (pantallas pequeñas) */}
@@ -48,7 +50,13 @@ const Menu = () => {
 };
 
 // Componente para los enlaces
-const NavLink = ({ href, text, onClick }) => (
+interface NavLinkProps {
+  href: string;
+  text: string;
+  onClick: () => void;
+}
+
+const NavLink = ({ href, text, onClick }: NavLinkProps) => (
   <Link
     href={href}
     onClick={onClick}
