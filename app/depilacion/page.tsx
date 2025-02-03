@@ -1,3 +1,4 @@
+"use client";
 import Menu from "../components/Menu";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
