@@ -19,7 +19,7 @@ export default function Home() {
             playsInline
             className='w-full h-full object-cover'
           >
-            <source src='selfcarevideo.mp4' type='video/mp4' />
+            <source src='/selfcarevideo.MP4' type='video/mp4' />
             Tu navegador no soporta videos.
           </video>
         </div>
