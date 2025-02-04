@@ -1,12 +1,10 @@
 "use client";
-import { useState } from 'react';
-import Link from 'next/link';
-import { Menu as MenuIcon, X as CloseIcon } from 'lucide-react'; // Íconos del menú
+import { useState } from "react";
+import Link from "next/link";
+import { Menu as MenuIcon, X as CloseIcon } from "lucide-react";
+
 const Menu = () => {
-  const handleClick = () => {
-    // Define what should happen when a link is clicked
-  };
-  const [isOpen, setIsOpen] = useState(false); // Estado para abrir/cerrar el menú
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="shadow-lg border-b-2 bg-custom-blue text-white py-2 fixed top-0 left-0 w-full z-50 text-black">
@@ -20,25 +18,26 @@ const Menu = () => {
           </div>
         </div>
 
-        {/* Botón Hamburguesa */}
+        {/* Enlaces de menú (visible a partir de 400px) */}
+        <div className="hidden sm:flex space-x-4">
+          <NavLink href="/#about" text="Sobre mí" />
+          <NavLink href="/#services" text="Servicios" />
+          <NavLink href="/#contact" text="Contacto" />
+          <NavLink href="/derma#schedule" text="Agenda" />
+        </div>
+
+        {/* Botón Hamburguesa (visible solo en pantallas < 400px) */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-black focus:outline-none"
+          className="sm:hidden text-black focus:outline-none"
         >
           {isOpen ? <CloseIcon size={30} /> : <MenuIcon size={30} />}
         </button>
-
-        {/* Menú (pantallas grandes) */}
-        <NavLink href="/#about" text="Sobre mí" onClick={handleClick} />
-  <NavLink href="/#services" text="Servicios" onClick={handleClick} />
-  <NavLink href="/#contact" text="Contacto" onClick={handleClick} />
-  <NavLink href="/derma#schedule" text="Agenda" onClick={handleClick} />
-
       </div>
 
-      {/* Menú desplegable (pantallas pequeñas) */}
+      {/* Menú desplegable para pantallas pequeñas */}
       {isOpen && (
-        <div className="md:hidden bg-custom-blue text-black font-bold space-y-4 py-4 px-6 text-center transition-all duration-300">
+        <div className="sm:hidden bg-custom-blue text-black font-bold space-y-4 py-4 px-6 text-center transition-all duration-300">
           <NavLink href="/#about" text="Sobre mí" onClick={() => setIsOpen(false)} />
           <NavLink href="/#services" text="Servicios" onClick={() => setIsOpen(false)} />
           <NavLink href="/#contact" text="Contacto" onClick={() => setIsOpen(false)} />
@@ -53,7 +52,7 @@ const Menu = () => {
 interface NavLinkProps {
   href: string;
   text: string;
-  onClick: () => void;
+  onClick?: () => void; // Opcional para no requerirlo en el menú superior
 }
 
 const NavLink = ({ href, text, onClick }: NavLinkProps) => (
